@@ -30,18 +30,17 @@
 
 ## Labs
 
-### Lab #2
+### Lab #1
 
 | Name | Value |
 | :--- | :--- |
-| Name | 2 - Functions and Unittest Lab |
-| Description | Lab covering standard input and output |
-| Due Date | 10-Jan-20 |
+| Name | 1 - Math circle stuff |
+| Description | Lab covering math libraries |
+| Due Date | 21-Feb-24 |
 | Status | complete |
-| Location | https://github.com/rambasnet/csci000-astudent/tree/master/labs/cpp/stdio |
+| Location | https://github.com/two70/CS130/tree/main/labs/labs2 |
 | Self Grade | 100/100 |
 | Notes | typed the given code stub; fixed all the fixmes; learned about stdio |
-
 
 ### Lab #1
 
