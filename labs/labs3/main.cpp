@@ -1,8 +1,8 @@
 /*
 Functions Lab
-Updated By: FIXME1
-CSCI 111
-Date: FIXME2
+Updated By: Jason West
+CSCI 130
+Date: 20240214
 
 Program prompts the user to enter two points in the form (x1, y1) and (x2, y2) and finds the distance between the two points using a function.
 Algorithm steps:
@@ -48,7 +48,6 @@ void clearScreen() {
 int main()
 {
     int x1, y1, x2, y2; // variables to store two points (x1, y1) and (x2, y2)
-    char ch;
 
     //FIXME-bonus - 10 bonus points - add loop until user wants to quit
     // the loop will execute the following block of code
@@ -57,15 +56,19 @@ int main()
         cout << "Program calculates distance between 2 points on a 2D coordinate." << endl;
         cout << "Enter a point in the form (x, y): ";
         // parse the input stream
-        cin >> ch >> x1 >> ch >> y1 >> ch; // value stored in ch is ignored
+        cin >> x1 >> y1; // value stored in ch is ignored
+
         printf("(x1, y1) = (%d, %d)\n", x1, y1);
 
         cout << "Enter a second point in the form (x, y): ";
-        //FIXME3 - Read/parse the second point and store data into variables x2 and y2
-        //FIXME4 - Call test function
+        // parse the input stream
+        cin >> x2 >> y2; // value stored in ch is ignored
 
-        //FIXME5 - call findDistance function passing proper arguments
-        //FIXME6 – Using printf function display the returned distance with proper description
+        printf("(x2, y2) = (%d, %d)\n", x2, y2); //FIXME3 - Read/parse the second point and store data into variables x2 and y2
+        test(); //FIXME4 - Call test function
+
+        double result = findDistance(x1, y1, x2, y2);//FIXME5 - call findDistance function passing proper arguments
+        printf("Result is %f\n", result);//FIXME6 – Using printf function display the returned distance with proper description
     }
 
     cin.ignore(1000, '\n');
@@ -77,10 +80,17 @@ int main()
 
 double findDistance(int x1, int y1, int x2, int y2)
 {
+    //a. finds the distance between them using the equation: √((x2-x1)^2 + (y2-y1)^2)
+    //b. returns the calculated distance value
     // FIXME7 - Find the distance between (x1, y1) and (x2, y2)
     // following the algorithm in step 1
     // return the calculated distance
-    return 0.000000;
+    double result = 0.0;
+    double xs = x2 - x1;
+    double ys = y2 - y1;
+    result = sqrt(pow(xs, 2) + pow(ys, 2));
+    // printf("Result = %f", result);
+    return sqrt( pow((x2 - x1),2) + pow((y2 - y1), 2));
 }
 
 // test function that test findDistance function with 3 test cases
