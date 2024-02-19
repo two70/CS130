@@ -2,6 +2,10 @@
 
 using namespace std;
 
+double resCalculator(double r1, double r2) {
+    return r1 + r2;
+}
+
 int main() {
     double ohms = 0.0;
     double resValues = 0.0;
@@ -12,4 +16,11 @@ int main() {
     }
     ohms = 1.0 / resValues;
     cout << ohms << endl;
+
+    double result;
+
+    result = resCalculator(2.0, 3.0);
+    cout << "Result " << result << endl;
+
+    return 0;
 }
