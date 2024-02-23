@@ -62,6 +62,8 @@ void clearScreen() {
 }
 
 int main(int argc, char* argv[]) {
+    // double avg = 0.0;
+    // findAverage(3.0, 3.2, avg);
     bool keepRunning = true;
     if(argc == 2 && string(argv[1]) == "test") {
         test();
@@ -119,7 +121,9 @@ double findProduct(const double &n1, const double &n2) {
 
 void findAverage(const double &n1, const double &n2, double &avg) {
     double newAvg = findSum(n1, n2) / 2;
+    // printf("avg = %f", avg);
     avg = newAvg; 
+    // printf("avg = %f", avg);
     //FIXME5 - find the average of n1 and n2 and update avg
     //FIXME6 - Must call findSum function to find the sum of n1 and n2
     // Note: this void function doesn't return a value but
@@ -153,11 +157,17 @@ void test() {
     
     assert(findDifference(8.0, 3.0) == 5.0);
     assert(findDifference(7.2, 4.0) == 3.2);
-    
+
     assert(findProduct(5.0, 10.1) == 50.5);
     // FIXME9 – Using assert function write at least 2 test cases for each of the following functions
     // findDifference(), findProduct(), findLarger(),
     // findSmaller(), findQuotient(), findAverage()
+    double avg = 0.0;
+    cout << "before " << avg << endl;
+    findAverage(1.0, 2.0, avg);
+    cout << "after " << avg << endl;
+
+    assert(avg == 1.5);
     printf("%s\n", "all test cases passed...");
 }
 
@@ -195,13 +205,14 @@ bool program() {
         }
         case 2:
         {
-            //FIXME10: call getTwoNumbers function
-            //FIXME11: call findDifference function and print the result
+            getTwoNumbers(num1, num2);//FIXME10: call getTwoNumbers function
+            cout << findDifference(num1, num2) << endl;//FIXME11: call findDifference function and print the result
             break;
         }
         case 3:
         {
-            //FIXME12: get two numbers and find their product using functions
+            getTwoNumbers(num1, num2);
+            cout << findProduct(num1, num2) << endl; //FIXME12: get two numbers and find their product using functions
             break;
         }
         // FIXME13: complete the rest of the cases 4, 6, and 7
@@ -214,6 +225,12 @@ bool program() {
             // print the result
             printf("larger between %.2f & %.2f is %.2f\n", num1, num2, max);
             break;
+        }
+        case 7:
+        {
+            getTwoNumbers(num1, num2);
+            double avg = 0.0;
+            findAverage(num1, num2, avg);
         }
         case 8:
         default: // must be option 8
