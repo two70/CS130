@@ -58,9 +58,12 @@ Square of height 5, e.g., would look like the following.
 *  *  *  *  *   
 
 */
-
-
-
+    for(int row = 1; row <= height; row++) {
+        for(int column = 1; column <= height; column++ ) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
 // function clears the screen system call
 // NOTE: system call is not a security best pracice!
@@ -75,7 +78,6 @@ void clearScreen() {
 
 int main(int argc, char* argv[]) {
     bool wantsToQuit = false;
-
     while(not wantsToQuit){
         clearScreen();// FIXME6 call clearScreen function to clear the screen for each round of the loop
         int height;
@@ -87,9 +89,12 @@ int main(int argc, char* argv[]) {
 
         // FIXME7
         // Call printFlippedTriangle passing proper argument
+
         // Manually test the function
 
-        // FIXME6
+        // FIXME8
+        cout << "\n\n";
+        printSquare(height);
         // Call the function defined in FIXME4 passing proper argument
         // Manually test the function
 
