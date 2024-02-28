@@ -42,6 +42,14 @@ void printFlippedTriangle(int height) {
     
     */
     // FIXME3 ...
+    int row = 1;
+    while(row <= height){
+        for(int column = height; column >= row; column--){
+            cout << "* ";
+        }
+        row += 1;
+        cout << endl;
+    }
 }
 
 void printSquare(int height) {
@@ -89,7 +97,8 @@ int main(int argc, char* argv[]) {
 
         // FIXME7
         // Call printFlippedTriangle passing proper argument
-
+        cout << "\n\n";
+        printFlippedTriangle(height);
         // Manually test the function
 
         // FIXME8
