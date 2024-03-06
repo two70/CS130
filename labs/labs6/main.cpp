@@ -53,11 +53,12 @@ int main(int argc, char* argv[]) {
     OPERATION oper;
     bool wantsToQuit = false;
     //FIXME4: Add do... while loop to continue the program until the user wants to quit
-    //FIXME5: call clear function defined above to clear the screen
+    
     do {
         showMenu();
         cin >> input;
         oper = getOperation(input);
+        clear();//FIXME5: call clear function defined above to clear the screen
         switch (oper) {
             case ADD:
                 cout << "Enter two whole numbers separated by space: ";
@@ -82,7 +83,7 @@ int main(int argc, char* argv[]) {
                 wantsToQuit = true;
                 break;
         }
-    } while(!wantsToQuit)
+    } while(!wantsToQuit);
     delete num1;
     delete num2;
     delete sum;
