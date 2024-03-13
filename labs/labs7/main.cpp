@@ -33,11 +33,15 @@ int main(int argc, char* argv[]) {
 string answer(const string &line) {
     // FIXME3
     // cout << line.size() << endl;
-    for(int i = 0; i < (int)line.size(); i++) {
-        if(i != 0 and line[i] == 's' and line[i - 1] == 's') {
-            return "hiss";
-        }
-    }
+    // for(int i = 0; i < (int)line.size(); i++) {
+    //     if(i != 0 and line[i] == 's' and line[i - 1] == 's') {
+    //         return "hiss";
+    //     }
+    // }
+
+    int hiss = line.find("ss");
+    if(hiss >= 0)
+        return "hiss";
     // implment algorithm step 2
     // return "hiss" if ss is found in line
     // otherwise, return "no hiss"
@@ -54,7 +58,7 @@ void testAnswer() {
 // solving the problem for kattis
 void solve(string ourString) {
     // string line;
-    cout << "ourString = " << ourString << endl;
+    // cout << "ourString = " << ourString << endl;
     // string consists of only lowercase letters (no spaces) upto 30 chars
     // FIXME5
     // read string into line
