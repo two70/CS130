@@ -32,11 +32,16 @@ int main(int argc, char* argv[]) {
 
 string answer(const string &line) {
     // FIXME3
-    cout << line[2];
+    // cout << line.size() << endl;
+    for(int i = 0; i < (int)line.size(); i++) {
+        if(i != 0 and line[i] == 's' and line[i - 1] == 's') {
+            return "hiss";
+        }
+    }
     // implment algorithm step 2
     // return "hiss" if ss is found in line
     // otherwise, return "no hiss"
-    return "hiss";
+    return "no hiss";
 }
 
 // unit testing answer()
