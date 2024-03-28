@@ -34,6 +34,19 @@ unsigned int decimal(string &binary) {
     return answer;
 }
 
+string reversed(string &binary) {
+
+}
+
 int main() {
+    int input;
+    cin >> input;
+
+    string result = binary(input);
+    string reversed = reversed(result);
+    int int_result = decimal(reversed);
+
+    cout << int_result << endl;
+
     return 0;
 }
