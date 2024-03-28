@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string binary(unsigned int &decimal) {
+string binary(unsigned int decimal) {
     const int divisor = 2;
     int dividend;
     int quotient, remain;
@@ -35,7 +35,12 @@ unsigned int decimal(string &binary) {
 }
 
 string reversed(string &binary) {
-
+    string str_copy = binary;
+    int str_size = binary.size();
+    for(int i = 0; i < str_size; i++){
+        str_copy[str_size - 1 - i] = binary[i];
+    }
+    return str_copy;
 }
 
 int main() {
@@ -43,9 +48,8 @@ int main() {
     cin >> input;
 
     string result = binary(input);
-    string reversed = reversed(result);
-    int int_result = decimal(reversed);
-
+    string str_reversed = reversed(result);
+    int int_result = decimal(str_reversed);
     cout << int_result << endl;
 
     return 0;
