@@ -78,6 +78,20 @@ void writeData(const vector<int> & numbers) {
     2. Store and use the file name to open the file in write mode
     3. Write output as shown in output.txt file with proper formatting using iomanip
     */
+    string outFile;
+    cout << "Enter output file name: ";
+    getline(cin, outFile);
+
+    ofstream fout;
+    fout.open(outFile);
+    fout << "List of Numbers: ";
+    for(int i: numbers)
+        fout << i << " ";
+    fout << endl << endl;
+    fout << setw(50) << setfill('=') << " " << setfill(' ') << endl;
+    fout << setw(20) << left << setfill(' ') << "Statistical Results" << setw(20) << setfill(' ') << endl;
+    // fout << setw(25) << left << "Item" << setw(25) << right << "Price" << endl;
+    fout << "min = " << findMin(numbers) << endl;
 }
 
 int findMax(const vector<int> & nums) {
@@ -88,6 +102,11 @@ int findMax(const vector<int> & nums) {
 }
 
 int findMin(const vector<int> & nums) {
+    int min = 1000000000;
+    for(int i: nums) {
+        if(i < min )
+            min = i;
+    }
     // FIXME5 - implement function to find and return min value from nums vector
     return 0;
 } 
