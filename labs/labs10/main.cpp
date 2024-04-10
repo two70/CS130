@@ -43,7 +43,8 @@ int main(int argc, char* argv[]) {
     vector<int> numbers;
     string inFile;
     cout << "Enter input file name: ";
-    getline(cin, inFile);
+    // getline(cin, inFile);
+    inFile = "input.txt";
     readData(numbers, inFile);
     writeData(numbers);
     cout << "All done. Enter to exit...";
@@ -80,7 +81,8 @@ void writeData(const vector<int> & numbers) {
     */
     string outFile;
     cout << "Enter output file name: ";
-    getline(cin, outFile);
+    // getline(cin, outFile);
+    outFile = "output.txt";
 
     ofstream fout;
     fout.open(outFile);
@@ -89,9 +91,10 @@ void writeData(const vector<int> & numbers) {
         fout << i << " ";
     fout << endl << endl;
     fout << setw(50) << setfill('=') << " " << setfill(' ') << endl;
-    fout << setw(20) << left << setfill(' ') << "Statistical Results" << setw(20) << setfill(' ') << endl;
+    fout << setw(20) << left << setfill(' ') << "Statistical Results" << setfill(' ') << endl;
     // fout << setw(25) << left << "Item" << setw(25) << right << "Price" << endl;
-    fout << "min = " << findMin(numbers) << endl;
+    fout << "Max\tMin\tMean\tMedian\tRange\n";
+    fout << findMax(numbers) << "\t" << findMin(numbers) << "\t" << findMean(numbers) << "\t"<< findMedian(numbers) << "\t" << findRange(numbers) << "\t" << endl;
 }
 
 int findMax(const vector<int> & nums) {
@@ -102,13 +105,12 @@ int findMax(const vector<int> & nums) {
 }
 
 int findMin(const vector<int> & nums) {
-    int min = 1000000000;
-    for(int i: nums) {
-        if(i < min )
-            min = i;
+    int min = nums[0];
+    for(int n: nums) {
+        min = (n < min) ? n : min;
     }
     // FIXME5 - implement function to find and return min value from nums vector
-    return 0;
+    return min;
 } 
 
 float findMean(const vector<int> & nums) {
@@ -122,7 +124,8 @@ float findMean(const vector<int> & nums) {
 int findRange(const vector<int> & nums) {
     // FIXME6 - implement function that finds and returns the range value
     // range = max - min
-    return 0;
+    int range = findMax(nums) - findMin(nums);
+    return range;
 }
 
 float findMedian(vector<int> nums) {
