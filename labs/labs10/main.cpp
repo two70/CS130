@@ -94,8 +94,19 @@ void writeData(const vector<int> & numbers) {
     fout << setw(10) << setfill(' ') << " " << "Statistical Results" << setfill(' ') << endl;
     fout << setw(40) << setfill('=') << " " << endl;
     // fout << setw(25) << left << "Item" << setw(25) << right << "Price" << endl;
-    fout << "Max" << setw(5) << setfill(' ') << " " << "Min\tMean\tMedian\tRange\n";
-    fout << findMax(numbers) << setw(5) << setfill(' ') << " "  << findMin(numbers) << "\t" << findMean(numbers) << "\t"<< findMedian(numbers) << "\t" << findRange(numbers) << "\t" << endl;
+    fout << "Max";
+    fout << setw(5) << setfill(' ') << " "  << "Min";
+    fout << setw(5) << setfill(' ') << " "  << "Mean";
+    fout << setw(5) << setfill(' ') << " "  << "Median"; 
+    fout << setw(5) << setfill(' ') << " "  << "Range"; 
+    fout << endl;
+    
+    fout << findMax(numbers);
+    fout << setw(5) << setfill(' ') << " "  << findMin(numbers);
+    fout << setw(5) << setfill(' ') << " "  << floor(findMean(numbers) * 100) / 100;
+    fout << setw(5) << setfill(' ') << " "  << findMedian(numbers); 
+    fout << setw(5) << setfill(' ') << " "  << findRange(numbers); 
+    fout << endl;
 }
 
 int findMax(const vector<int> & nums) {
