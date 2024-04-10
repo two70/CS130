@@ -43,8 +43,8 @@ int main(int argc, char* argv[]) {
     vector<int> numbers;
     string inFile;
     cout << "Enter input file name: ";
-    // getline(cin, inFile);
-    inFile = "input.txt";
+    getline(cin, inFile);
+    // inFile = "input.txt";
     readData(numbers, inFile);
     writeData(numbers);
     cout << "All done. Enter to exit...";
@@ -81,8 +81,8 @@ void writeData(const vector<int> & numbers) {
     */
     string outFile;
     cout << "Enter output file name: ";
-    // getline(cin, outFile);
-    outFile = "output.txt";
+    getline(cin, outFile);
+    // outFile = "output.txt";
 
     ofstream fout;
     fout.open(outFile);
@@ -107,6 +107,10 @@ int findMax(const vector<int> & nums) {
 int findMin(const vector<int> & nums) {
     int min = nums[0];
     for(int n: nums) {
+        if(n < min)
+            min = n;
+        else
+            min = min;
         min = (n < min) ? n : min;
     }
     // FIXME5 - implement function to find and return min value from nums vector
